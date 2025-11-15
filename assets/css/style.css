@@ -1,0 +1,671 @@
+/* =========================
+   GLOBAL STYLE
+========================= */
+
+:root {
+  --primary: #012970;   /* Biru gelap lembaga */
+  --accent: #0d6efd;    /* Biru terang (aksi) */
+  --light-bg: #f8fbff;  /* Background section */
+  --text-main: #444444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* Section umum */
+section {
+  padding: 60px 0;
+}
+
+.section-bg {
+  background: var(--light-bg);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.section-header p {
+  margin: 0;
+  color: #666;
+}
+
+/* SECTION PENUH SATU LAYAR */
+.full-screen {
+  min-height: 100vh;        /* tinggi minimal = tinggi layar */
+  padding-top: 100px;       /* kompensasi header fixed */
+  padding-bottom: 40px;
+  display: flex;
+  align-items: center;      /* konten di tengah vertikal (desktop) */
+}
+
+.full-screen > .container {
+  width: 100%;
+}
+
+/* =========================
+   HEADER & NAVBAR
+========================= */
+
+.header {
+  background: #ffffff;
+  transition: all 0.3s;
+  z-index: 997;
+  padding: 12px 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.header .logo img {
+  max-height: 40px;
+}
+
+.header .logo span {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Navbar desktop */
+.navbar {
+  padding: 0;
+}
+
+/* Hanya ul paling luar */
+.navbar > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover > a {
+  color: var(--accent);
+}
+
+/* Toggle untuk mobile */
+.mobile-nav-toggle {
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+}
+
+/* DROPDOWN DESKTOP */
+.navbar .dropdown > a i {
+  font-size: 14px;
+  margin-left: 4px;
+}
+
+.navbar .dropdown ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin: 0;
+  padding: 8px 0;
+  list-style: none;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  display: none;              /* awalnya sembunyi */
+  flex-direction: column;     /* item ke bawah */
+  min-width: 220px;
+  z-index: 99;
+}
+
+.navbar .dropdown ul li a {
+  display: block;
+  padding: 8px 18px;
+}
+
+/* Tampilkan dropdown saat hover (desktop) */
+.navbar .dropdown:hover > ul {
+  display: flex;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+  padding-top: 90px;   /* akan ditambah lagi oleh .full-screen */
+  padding-bottom: 60px;
+  background: #ffffff;
+}
+
+.hero h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.hero h2 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #555;
+}
+
+.hero p {
+  margin-bottom: 15px;
+}
+
+.hero .btn-get-started {
+  display: inline-block;
+  padding: 10px 26px;
+  border-radius: 4px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.hero .btn-get-started:hover {
+  background: #0b5ed7;
+  color: #fff;
+}
+
+/* =========================
+   BOX / CARD UMUM
+========================= */
+
+.about-box,
+.service-card,
+.info-box,
+.org-box,
+.program-card {
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;
+  padding: 20px;
+  height: 100%;
+}
+
+/* List dengan ikon checklist */
+.list-check {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-check li {
+  margin-bottom: 8px;
+}
+
+.list-check i {
+  color: var(--accent);
+  margin-right: 8px;
+}
+
+/* =========================
+   TENTANG KAMI
+========================= */
+
+.about p {
+  margin-bottom: 12px;
+}
+
+.about-box h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.about-box ul li {
+  margin-bottom: 8px;
+}
+
+.about-box i {
+  margin-right: 6px;
+  color: var(--accent);
+}
+
+/* =========================
+   VISI & MISI
+========================= */
+
+#visi-misi h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+#visi-misi p {
+  margin-bottom: 10px;
+}
+
+#visi-misi ol {
+  padding-left: 20px;
+}
+
+/* =========================
+   PROGRAM PELATIHAN
+========================= */
+
+.services .service-card {
+  transition: 0.3s;
+}
+
+.services .service-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.services .service-card ul {
+  padding-left: 18px;
+}
+
+.services .service-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 12px 25px rgba(13, 110, 253, 0.08);
+}
+
+/* =========================
+   FASILITAS & LOKASI
+========================= */
+
+.fasilitas h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.fasilitas p {
+  margin-bottom: 10px;
+}
+
+.fasilitas .ratio iframe {
+  border-radius: 8px;
+}
+
+/* =========================
+   STRUKTUR ORGANISASI
+========================= */
+
+.struktur .org-box {
+  text-align: center;
+}
+
+.struktur .org-box h4,
+.struktur .org-box h5 {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* =========================
+   KONTAK
+========================= */
+
+.contact .info-box h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.contact .info-box p {
+  margin-bottom: 6px;
+}
+
+/* Form */
+.php-email-form label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.php-email-form .form-control {
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.php-email-form textarea.form-control {
+  resize: vertical;
+}
+
+.php-email-form button {
+  padding: 8px 24px;
+  border: none;
+  border-radius: 4px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.php-email-form button:hover {
+  background: #0b5ed7;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  background: #ffffff;          /* putih */
+  color: var(--primary);        /* teks dark blue */
+  font-size: 14px;
+}
+
+.footer a {
+  color: var(--primary);
+}
+
+.footer-top {
+  padding: 30px 0 10px 0;
+}
+
+.footer-info h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.footer-contact h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.footer-bottom {
+  padding: 12px 0 18px 0;
+  border-top: 1px solid rgba(1, 41, 112, 0.15);
+}
+
+/* Sosial media */
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  margin: 0 3px;
+  border-radius: 50%;
+  border: 1px solid var(--primary);
+  font-size: 16px;
+  color: var(--primary);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 991px) {
+  .hero {
+    padding-top: 110px;
+  }
+
+  /* Section full-screen di mobile: mulai dari atas, tidak terlalu tengah */
+  .full-screen {
+    padding-top: 120px;
+    padding-bottom: 40px;
+    align-items: flex-start;
+  }
+
+  /* Menu utama di mobile */
+  .navbar > ul {
+    display: none; /* default disembunyikan di mobile */
+    flex-direction: column;
+    background: #ffffff;
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    min-width: 180px;
+  }
+
+  .navbar > ul.show {
+    display: flex;
+  }
+
+  /* Dropdown di mobile: ikut ke bawah, tidak absolute */
+  .navbar .dropdown ul {
+    position: static;
+    box-shadow: none;
+    padding: 0 0 0 10px;
+    margin-top: 4px;
+    display: flex;          /* langsung kelihatan */
+    flex-direction: column;
+    background: transparent;
+    border-radius: 0;
+  }
+
+  .navbar .dropdown ul li a {
+    padding: 6px 10px;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    color: var(--primary);
+  }
+}
+
+@media (max-width: 575px) {
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero h2 {
+    font-size: 16px;
+  }
+}
+
+.poster-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;              /* jarak antar tombol */
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.poster-wrapper:hover .poster-overlay {
+  opacity: 1;
+}
+
+.poster-wrapper {
+  text-align: center;
+}
+
+
+
+.poster-buttons {
+  display: flex;
+  flex-direction: column;   /* <– DITUMPUK VERTIKAL */
+  gap: 8px;                 /* jarak antar tombol */
+  margin-top: 1rem;
+}
+
+.poster-buttons .btn {
+ width: 100%;              /* full lebar card */
+  padding: 0.6rem 0.75rem;
+  border-radius: 10px;
+  font-weight: 600;
+  justify-content: center; /* biar sama rapi */
+}
+
+.card-img {
+  width: 100%;      /* gunakan lebar penuh card */
+  max-width: 500px; /* atur ukuran maksimum sesuai selera */
+  margin: 120px auto 0 auto;
+  display: block;
+}
+
+@media (max-width: 786px) {
+  .card-img {
+    margin-top: 50px;
+  }
+
+}
+
+.program-intro {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.section-title {
+  font-weight: 600;
+  color: #0A3D91;
+  margin-bottom: 10px;
+}
+
+.program-text {
+  margin-bottom: 5px;
+  line-height: 1.6;
+}
+
+.list-check li {
+  margin-bottom: 7px;
+  padding-left: 25px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.list-check li::before {
+  content: "\f26e"; /* bootstrap-check2-circle */
+  font-family: "bootstrap-icons";
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #0A66C2;
+  font-size: 1rem;
+}
+
+.list-dash li {
+  margin-bottom: 6px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.list-dash li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: #0A3D91;
+}
+
+.program-intro {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.section-title {
+  font-weight: 600;
+  color: #0A3D91;
+  margin-bottom: 10px;
+}
+
+.program-text {
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.list-check {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-check li {
+  margin-bottom: 7px;
+  padding-left: 26px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.list-check li::before {
+  content: "\f26e"; /* bootstrap-icons: check2-circle */
+  font-family: "bootstrap-icons";
+  position: absolute;
+  top: 2px;
+  left: 0;
+  color: #0A66C2;
+  font-size: 1rem;
+}
+
+.list-dash {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-dash li {
+  margin-bottom: 6px;
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.list-dash li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: #0A3D91;
+}
+
+@media (max-width: 767.98px) {
+  .program-detail .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .program-intro {
+    text-align: left;
+  }
+}
+
+.flyer-wrap {
+  margin-top: 120px;
+}
