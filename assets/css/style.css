@@ -266,11 +266,19 @@ section {
 .hero-badge {
   background: rgba(13, 110, 253, 0.08);
   color: var(--primary);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 50px;
+  display: inline-block;
+  white-space: nowrap; /* JANGAN DIPOTONG */
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 
 .hero-illustration-wrapper {
   max-width: 420px;
@@ -337,6 +345,7 @@ section {
 ========================= */
 
 .about p {
+  text-align: justify;
   margin-bottom: 12px;
 }
 
