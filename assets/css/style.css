@@ -139,6 +139,7 @@ section {
 /* Toggle mobile */
 .mobile-nav-toggle {
   font-size: 24px;
+  color: #1d2b57;
   cursor: pointer;
   display: none;
   line-height: 0;
@@ -636,6 +637,10 @@ section {
 
   .navbar > ul.show {
     display: flex;
+  }
+
+  .navbar ul.show{
+    display: block !important;
   }
 
   .navbar .dropdown ul {
