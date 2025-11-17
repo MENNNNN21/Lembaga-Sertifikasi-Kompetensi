@@ -9,6 +9,14 @@
   --text-main: #444444;
 }
 
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;  /* cegah geser ke samping */
+}
+
+
 * {
   box-sizing: border-box;
 }
