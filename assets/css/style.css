@@ -266,7 +266,7 @@ section {
 .hero-badge {
   background: rgba(13, 110, 253, 0.08);
   color: var(--primary);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
