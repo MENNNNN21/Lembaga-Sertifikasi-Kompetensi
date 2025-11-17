@@ -16,7 +16,6 @@ body {
   overflow-x: hidden;  /* cegah geser ke samping */
 }
 
-
 * {
   box-sizing: border-box;
 }
@@ -273,12 +272,11 @@ section {
   padding: 6px 10px;
   border-radius: 50px;
   display: inline-block;
-  white-space: nowrap; /* JANGAN DIPOTONG */
+  white-space: nowrap;
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 
 .hero-illustration-wrapper {
   max-width: 420px;
@@ -643,9 +641,15 @@ section {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
   }
 
+  /* Container header sebagai acuan posisi menu */
+  .header .container-xl,
+  .header .container-fluid {
+    position: relative;
+  }
+
   /* NAVBAR di mobile */
   #navbar {
-    position: relative;
+    position: static;       /* penting: supaya ul absolute ikut container, bukan nav kecil */
     margin-left: auto;
   }
 
@@ -686,11 +690,15 @@ section {
     box-shadow: none;
     padding: 0 0 0 16px;
     margin-top: 4px;
-    display: flex;
+    display: none;
     flex-direction: column;
     background: transparent;
     border-radius: 0;
     min-width: 0;
+  }
+  
+  .navbar .dropdown.dropdown-active > ul {
+    display: flex;
   }
 
   .navbar .dropdown ul li a {
